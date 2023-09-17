@@ -1,12 +1,14 @@
-// Importing our CSS file that React created.
-import './App.css';
-import { useState, useEffect } from 'react';
-
 // Importing our components.
-import Navbar from './components/Navbar'
+import { useState, useEffect } from 'react';
+import Navbar from './components/Navbar';
+import LoginPage from './components/LoginPage';
 import ListingsPage from './components/ListingsPage';
 
+// Importing our CSS file that React created.
+import './App.css';
+
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [listings, setListings] = useState([]);
 
   useEffect(() =>  {
@@ -25,12 +27,13 @@ function App() {
       }
     ];
     setListings(fetchedListings);
-  });
+  }, []);
 
   return (
     <>
-      <Navbar/>
-      <ListingsPage listings={listings}/>
+      <Navbar isLoggedIn={isLoggedIn}/>
+      <LoginPage setIsLoggedIn={setIsLoggedIn}/>
+      {/* <ListingsPage listings={listings}/> */}
     </>
   );
 }

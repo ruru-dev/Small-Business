@@ -5,7 +5,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 
-export default function Navbar() {
+export default function Navbar({isLoggedIn}) {
   return (
     // The sx prop is a shortcut for defining custom styles.
     // The outer curly braces opens up our javascript, while the inner curly braces represents our object creation.
@@ -16,7 +16,7 @@ export default function Navbar() {
             Austin Small Business
           </Typography>
           <Button color="inherit">Listings</Button>
-          <Button color="inherit">Login</Button>
+          {!isLoggedIn && <Button color="inherit">Login</Button>}
         </Toolbar>
       </AppBar>
     </Box>
