@@ -1,9 +1,7 @@
-import LoginForm from "./LoginForm";
+import LoginForm from "../containers/LoginForm";
 
-export default function LoginPage({ setIsLoggedIn }) {
+export default function LoginPage({user}) {
   return (
-    <>
-      <LoginForm setIsLoggedIn={setIsLoggedIn} />
-    </>
+    <LoginForm />
   );
 }

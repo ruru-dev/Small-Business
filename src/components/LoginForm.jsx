@@ -1,15 +1,22 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { TextField, Button } from "@mui/material";
 
-export default function LoginForm({ setIsLoggedIn }) {
+export default function LoginForm({ loginUser }) {
+  const navigate = useNavigate();
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState(''); 
+  
   function handleSubmit(e) {
     e.preventDefault();
-    setIsLoggedIn(true);
+    loginUser({username, password})
+    navigate("/");
   }
 
   return (
     <form onSubmit={handleSubmit} className="standard-form">
-      <TextField required label="Username" variant="standard" />
-      <TextField required label="Password" variant="standard" type="password" margin="normal" />
+      <TextField required label="Username" variant="standard" onChange={(e) => setUsername(e.target.value)} type="email"/>
+      <TextField required label="Password" variant="standard" onChange={(e) => setPassword(e.target.value)} type="password" />
         <Button
           type="submit"
           variant="contained"
