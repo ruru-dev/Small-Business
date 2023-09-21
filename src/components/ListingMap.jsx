@@ -1,12 +1,12 @@
 import { Box } from "@mui/material";
 
-export default function BusinessMap({ address }) {
-  console.log(process.env);
+export default function ListingMap({ address, width=700, height=500 }) {
   return (
     <Box>
       <iframe
-        width="700"
-        height="500"
+        title="listing-map"
+        width={width}
+        height={height}
         style={{border:0}}
         loading="lazy"
         allowfullscreen

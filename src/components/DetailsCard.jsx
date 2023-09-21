@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-import BusinessMap from './BusinessMap';
+import ListingMap from './ListingMap';
 
 export default function DetailsCard({business}) {
   return (
@@ -22,7 +22,7 @@ export default function DetailsCard({business}) {
           {business.description}
         </Typography>
       </CardContent>
-      <BusinessMap address={business.address}/>
+      <ListingMap address={business.address}/>
     </Card>
   );
 }

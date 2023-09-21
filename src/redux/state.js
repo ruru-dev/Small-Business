@@ -1,5 +1,7 @@
+import Cookies from "js-cookie";
+
 const state =  {
-  user: null,
+  user: Cookies.get('username') || null,
   listings: [
     {
       id: 1,

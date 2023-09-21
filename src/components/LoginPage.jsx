@@ -1,7 +1,10 @@
+import { Box } from "@mui/material";
 import LoginForm from "../containers/LoginForm";
 
-export default function LoginPage({user}) {
+export default function LoginPage({ user }) {
   return (
-    <LoginForm />
+    <Box sx={{ marginTop: 15 }}>
+      <LoginForm />
+    </Box>
   );
 }
